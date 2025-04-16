@@ -17,5 +17,14 @@ namespace Mabub_project_SODV1202
             board = new char[Rows, Columns];
             InitializeBoard();
         }
+
+        private void InitializeBoard() 
+        { 
+            for (int row = 0; row < Rows; row++) 
+            {
+                for (int col = 0; col < Columns; col++)
+                {
+                    board[row, col] = '1';
+                }
     }
 }
