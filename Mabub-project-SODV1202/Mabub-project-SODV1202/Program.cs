@@ -28,3 +28,26 @@ namespace Mabub_project_SODV1202
                 }
     }
 }
+
+        public bool IsValidMove(int col)
+        {
+            return col >= 0 && col < Cols && board[0, col] == ' ';
+        }
+
+        public bool MakeMove(int col, char symbol)
+        {
+            if (!IsValidMove(col)) return false;
+
+            for (int row = Rows - 1; row >= 0; row--)
+            {
+                if (board[row, col] == ' ')
+                {
+                    board[row, col] = symbol;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool CheckWin(char symbol)
+        {
