@@ -51,3 +51,47 @@ namespace Mabub_project_SODV1202
 
         public bool CheckWin(char symbol)
         {
+            for (int row = 0; row < Rows; row++)
+            {
+                for (int col = 0; col < Cols - 3; col++)
+                {
+                    if (board[row, col] == symbol &&
+                        board[row, col + 1] == symbol &&
+                        board[row, col + 2] == symbol &&
+                        board[row, col + 3] == symbol)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            for (int row = 0; row < Rows; row++)
+            {
+                for (int col = 0; col < Cols - 3; col++)
+                {
+                    if (board[row, col] == symbol &&
+                        board[row, col + 1] == symbol &&
+                        board[row, col + 2] == symbol &&
+                        board[row, col + 3] == symbol)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            for (int row = 0; row < Rows; row++)
+            {
+                for (int col = 0; col < Cols - 3; col++)
+                {
+                    if (board[row, col] == symbol &&
+                        board[row, col + 1] == symbol &&
+                        board[row, col + 2] == symbol &&
+                        board[row, col + 3] == symbol)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
