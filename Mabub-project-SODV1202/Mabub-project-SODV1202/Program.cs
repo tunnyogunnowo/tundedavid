@@ -163,3 +163,18 @@ namespace Mabub_project_SODV1202
             return col;
         }
     }
+
+    public class GameController
+    {
+        private readonly GameBoard board;
+        private readonly Player player1;
+        private readonly Player player2;
+        private Player currentPlayer;
+
+        public GameController(Player p1, Player p2)
+        {
+            board = new GameBoard();
+            player1 = p1;
+            player2 = p2;
+            currentPlayer = player1;
+        }
