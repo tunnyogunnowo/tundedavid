@@ -1,0 +1,7 @@
+C:\Users\david\OneDrive\Documents\GitHub\tundedavid\Mabub-project-SODV1202\Mabub-project-SODV1202\obj\Debug\Mabub-project-SODV1202.csproj.AssemblyReference.cache
+C:\Users\david\OneDrive\Documents\GitHub\tundedavid\Mabub-project-SODV1202\Mabub-project-SODV1202\obj\Debug\Mabub-project-SODV1202.csproj.CoreCompileInputs.cache
+C:\Users\david\OneDrive\Documents\GitHub\tundedavid\Mabub-project-SODV1202\Mabub-project-SODV1202\bin\Debug\Mabub-project-SODV1202.exe.config
+C:\Users\david\OneDrive\Documents\GitHub\tundedavid\Mabub-project-SODV1202\Mabub-project-SODV1202\bin\Debug\Mabub-project-SODV1202.exe
+C:\Users\david\OneDrive\Documents\GitHub\tundedavid\Mabub-project-SODV1202\Mabub-project-SODV1202\bin\Debug\Mabub-project-SODV1202.pdb
+C:\Users\david\OneDrive\Documents\GitHub\tundedavid\Mabub-project-SODV1202\Mabub-project-SODV1202\obj\Debug\Mabub-project-SODV1202.exe
+C:\Users\david\OneDrive\Documents\GitHub\tundedavid\Mabub-project-SODV1202\Mabub-project-SODV1202\obj\Debug\Mabub-project-SODV1202.pdb
