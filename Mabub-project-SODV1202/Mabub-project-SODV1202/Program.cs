@@ -125,3 +125,41 @@ namespace Mabub_project_SODV1202
             }
         }
     }
+    public class Player
+    {
+        public string Name { get; }
+        public char Symbol { get; }
+
+        public Player(string name, char symbol)
+        {
+            Name = name;
+            Symbol = symbol;
+        }
+
+        public virtual int GetMove(GameBoard board)
+        {
+            int col;
+            do
+            {
+                Console.Write($"{Name}'s turn ({Symbol}). Enter column (1-7): ");
+                if (!int.TryParse(Console.ReadLine(), out col))
+                {
+                    Console.WriteLine("Invalid input. Please enter a number between 1 and 7.");
+                    col = -1;
+                    continue;
+                }
+                col--; // Convert to 0-based index
+
+                if (col < 0 || col >= 7)
+                {
+                    Console.WriteLine("Column must be between 1 and 7.");
+                }
+                else if (!board.IsValidMove(col))
+                {
+                    Console.WriteLine("That column is full. Choose another.");
+                }
+            } while (col < 0 || col >= 7 || !board.IsValidMove(col));
+
+            return col;
+        }
+    }
