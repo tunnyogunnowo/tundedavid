@@ -95,3 +95,33 @@ namespace Mabub_project_SODV1202
 
             return false;
         }
+
+        public bool IsBoardFull()
+        {
+            for (int col = 0; col < Cols; col++)
+            {
+                if (board[0, col] == ' ')
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public void DisplayBoard()
+        {
+            Console.WriteLine("\n  1   2   3   4   5   6   7");
+            Console.WriteLine("+---+---+---+---+---+---+---+");
+
+            for (int row = 0; row < Rows; row++)
+            {
+                Console.Write("| ");
+                for (int col = 0; col < Cols; col++)
+                {
+                    Console.Write(board[row, col]);
+                    Console.Write(" | ");
+                }
+                Console.WriteLine("\n+---+---+---+---+---+---+---+");
+            }
+        }
+    }
