@@ -215,3 +215,6 @@ namespace Mabub_project_SODV1202
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Connect Four (2-Player Version)");
+
+            Console.Write("Enter Player 2 name: ");
+            string p2Name = Console.ReadLine();
