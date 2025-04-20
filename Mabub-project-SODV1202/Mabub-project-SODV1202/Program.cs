@@ -226,3 +226,5 @@ namespace Mabub_project_SODV1202
 
             var player2 = new Player(p2Name, 'O');
 
+            var game = new GameController(player1, player2);
+            game.StartGame();
