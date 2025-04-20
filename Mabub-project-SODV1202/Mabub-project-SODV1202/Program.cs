@@ -209,3 +209,9 @@ namespace Mabub_project_SODV1202
             }
         }
     }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome to Connect Four (2-Player Version)");
