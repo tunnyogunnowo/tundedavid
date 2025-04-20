@@ -178,3 +178,34 @@ namespace Mabub_project_SODV1202
             player2 = p2;
             currentPlayer = player1;
         }
+        public void StartGame()
+        {
+            Console.WriteLine("Connect Four Game Started!");
+            Console.WriteLine($"{player1.Name} is {player1.Symbol}, {player2.Name} is {player2.Symbol}");
+
+            while (true)
+            {
+                board.DisplayBoard();
+
+                int col = currentPlayer.GetMove(board);
+                board.MakeMove(col, currentPlayer.Symbol);
+
+                if (board.CheckWin(currentPlayer.Symbol))
+                {
+                    board.DisplayBoard();
+                    Console.WriteLine($"\n{currentPlayer.Name} ({currentPlayer.Symbol}) wins!");
+                    break;
+                }
+
+                if (board.IsBoardFull())
+                {
+                    board.DisplayBoard();
+                    Console.WriteLine("\nThe game is a draw!");
+                    break;
+                }
+
+                // Switch players
+                currentPlayer = (currentPlayer == player1) ? player2 : player1;
+            }
+        }
+    }
