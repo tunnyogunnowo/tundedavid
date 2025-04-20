@@ -224,3 +224,5 @@ namespace Mabub_project_SODV1202
 
             var player1 = new Player(p1Name, 'X');
 
+            var player2 = new Player(p2Name, 'O');
+
