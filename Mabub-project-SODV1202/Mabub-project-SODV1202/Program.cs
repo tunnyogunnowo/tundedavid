@@ -222,3 +222,5 @@ namespace Mabub_project_SODV1202
             Console.Write("Enter Player 1 name: ");
             string p1Name = Console.ReadLine();
 
+            var player1 = new Player(p1Name, 'X');
+
