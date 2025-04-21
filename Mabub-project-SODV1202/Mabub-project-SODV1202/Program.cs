@@ -24,14 +24,14 @@ namespace Mabub_project_SODV1202
             {
                 for (int col = 0; col < Columns; col++)
                 {
-                    board[row, col] = '1';
+                    board[row, col] = ' ';
                 }
     }
 }
 
         public bool IsValidMove(int col)
         {
-            return col >= 0 && col < Cols && board[0, col] == ' ';
+            return col >= 0 && col < Columns && board[0, col] == ' ';
         }
 
         public bool MakeMove(int col, char symbol)
@@ -51,9 +51,10 @@ namespace Mabub_project_SODV1202
 
         public bool CheckWin(char symbol)
         {
+            //Check the horizontal line
             for (int row = 0; row < Rows; row++)
             {
-                for (int col = 0; col < Cols - 3; col++)
+                for (int col = 0; col < Columns - 3; col++)
                 {
                     if (board[row, col] == symbol &&
                         board[row, col + 1] == symbol &&
@@ -65,9 +66,10 @@ namespace Mabub_project_SODV1202
                 }
             }
 
+            //Check the vertical line
             for (int row = 0; row < Rows; row++)
             {
-                for (int col = 0; col < Cols - 3; col++)
+                for (int col = 0; col < Columns - 3; col++)
                 {
                     if (board[row, col] == symbol &&
                         board[row, col + 1] == symbol &&
@@ -79,9 +81,11 @@ namespace Mabub_project_SODV1202
                 }
             }
 
+
+            //Check diagonal (top-left to bottom-right)
             for (int row = 0; row < Rows; row++)
             {
-                for (int col = 0; col < Cols - 3; col++)
+                for (int col = 0; col < Columns - 3; col++)
                 {
                     if (board[row, col] == symbol &&
                         board[row, col + 1] == symbol &&
@@ -93,12 +97,27 @@ namespace Mabub_project_SODV1202
                 }
             }
 
-            return false;
+            // Check diagonal (bottom-left to top-right)
+   
+         for (int row = 3; row < Rows; row++)
+            {
+                for (int col = 0; col < Columns - 3; col++)
+                {
+                    if (board[row, col] == symbol &&
+                        board[row - 1, col + 1] == symbol &&
+                        board[row - 2, col + 2] == symbol &&
+                        board[row - 3, col + 3] == symbol)
+                    {
+                        return true;
+                    }
+                }
+               }
+
+                return false;
         }
-
         public bool IsBoardFull()
         {
-            for (int col = 0; col < Cols; col++)
+            for (int col = 0; col < Columns; col++)
             {
                 if (board[0, col] == ' ')
                 {
@@ -116,7 +135,7 @@ namespace Mabub_project_SODV1202
             for (int row = 0; row < Rows; row++)
             {
                 Console.Write("| ");
-                for (int col = 0; col < Cols; col++)
+                for (int col = 0; col < Columns; col++)
                 {
                     Console.Write(board[row, col]);
                     Console.Write(" | ");
@@ -216,15 +235,20 @@ namespace Mabub_project_SODV1202
         {
             Console.WriteLine("Welcome to Connect Four (2-Player Version)");
 
-            Console.Write("Enter Player 2 name: ");
-            string p2Name = Console.ReadLine();
-
             Console.Write("Enter Player 1 name: ");
             string p1Name = Console.ReadLine();
 
-            var player1 = new Player(p1Name, 'X');
+            Console.Write("Enter Player 2 name: ");
+            string p2Name = Console.ReadLine();
 
+            var player1 = new Player(p1Name, 'X');
             var player2 = new Player(p2Name, 'O');
 
             var game = new GameController(player1, player2);
             game.StartGame();
+
+            Console.WriteLine("\nPress any key to exit...");
+            Console.ReadKey();
+        }
+    }
+}
