@@ -72,9 +72,9 @@ namespace Mabub_project_SODV1202
                 for (int col = 0; col < Columns; col++)
                 {
                     if (board[row, col] == symbol &&
-                        board[row, col + 1] == symbol &&
-                        board[row, col + 2] == symbol &&
-                        board[row, col + 3] == symbol)
+                        board[row + 1, col] == symbol &&
+                        board[row + 2, col] == symbol &&
+                        board[row + 3, col] == symbol)
                     {
                         return true;
                     }
@@ -137,7 +137,7 @@ namespace Mabub_project_SODV1202
                 Console.Write("| ");
                 for (int col = 0; col < Columns; col++)
                 {
-                    Console.Write(board[row, col] == ' ' ? '.' : board[row, col]); // Show .
+                    Console.Write(board[row, col]);
                     Console.Write(" | ");
                 }
                 Console.WriteLine("\n+---+---+---+---+---+---+---+");
@@ -233,7 +233,6 @@ namespace Mabub_project_SODV1202
     {
         static void Main(string[] args)
         {
-            do {
                 Console.WriteLine("Welcome to Connect Four (2-Player Version)");
 
                 Console.Write("Enter Player 1 name: ");
@@ -248,8 +247,8 @@ namespace Mabub_project_SODV1202
                 var game = new GameController(player1, player2);
                 game.StartGame();
 
-                Console.Write("\nPlay again? (y/n): ");
-            } while (Console.ReadLine().ToLower() == "y");
+                Console.WriteLine("\nPress any key to exit...");
+                Console.ReadKey();
         }
 
     }
